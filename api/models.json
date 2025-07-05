@@ -1,0 +1,38 @@
+{
+  "models": {
+    "1": {
+      "id": 1,
+      "name": "加藤惠",
+      "path": "../myModel/加藤惠live2d/model/katou_01/katou_01.model.json",
+      "message": "加藤惠~",
+      "scale": 1.0,
+      "x": 0,
+      "y": 65,
+      "textures": {
+        "1": {
+          "id": 1,
+          "name": "默认"
+        }
+      }
+    },
+    "2": {
+      "id": 2,
+      "name": "雷姆",
+      "path": "../myModel/蕾姆live2d/model/rem/rem.json",
+      "message": "雷姆~",
+      "scale": 1.0,
+      "x": -5,
+      "y": 85,
+      "textures": {
+        "1": {
+          "id": 1,
+          "name": "默认"
+        }
+      }
+    }
+  },
+  "message": {
+    "noOtherTextures": "我还没有其他衣服呢！",
+    "newTexture": "我的新衣服好看嘛？"
+  }
+}
