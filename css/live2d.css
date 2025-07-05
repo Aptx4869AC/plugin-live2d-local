@@ -31,27 +31,22 @@
     transform: translateY(3px);
     transition: transform .3s ease-in-out, bottom 3s ease-in-out;
     z-index: 999999;
+    pointer-events: none;
 }
 
-@media screen and (max-width: 768px) {
-    #live2d-plugin {
-        z-index: 1;
-        display: none;
-    }
+#live2d {
+    cursor: grab;
 }
 
-#live2d-plugin:hover {
-    transform: translateY(0);
+#live2d:active {
+    cursor: grabbing;
 }
 
 #live2d-tips {
     animation: shake 50s ease-in-out 5s infinite;
-    /* 深蓝黑渐变背景，更符合博客主题 */
     background: linear-gradient(135deg, rgba(26, 35, 56, 0.95), rgba(52, 73, 108, 0.9));
-    /* 亮蓝色描边，增强科技感 */
     border: 2px solid #64b5f6;
     border-radius: 15px;
-    /* 多层阴影增强立体感和发光效果 */
     box-shadow: 
         0 4px 15px rgba(0, 0, 0, 0.3),
         0 0 20px rgba(100, 181, 246, 0.2),
@@ -68,68 +63,25 @@
     transition: all 0.3s ease;
     width: 250px;
     word-break: break-all;
-    /* 亮色字体确保在深色背景下清晰可读 */
     color: #e3f2fd;
-    /* 深色文字描边增强对比度 */
     text-shadow: 
         0 1px 2px rgba(0, 0, 0, 0.8),
         0 0 5px rgba(100, 181, 246, 0.3);
-    /* 优化字体渲染 */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* 添加微妙的内发光 */
     backdrop-filter: blur(5px);
 }
 
 #live2d-tips.live2d-tips-active {
     opacity: 1;
     transition: opacity .2s;
-    /* 保持原有的快速淡入效果，只添加轻微的发光增强 */
     box-shadow: 
         0 4px 15px rgba(0, 0, 0, 0.3),
         0 0 20px rgba(100, 181, 246, 0.25);
 }
 
-
 #live2d-tips span {
     color: #0099cc;
-}
-
-#live2d {
-    cursor: grab;
-    height: 600px;  /* 你想要的高度 */
-    width: 320px;   /* 你想要的宽度 */
-    position: relative;
-    /* 初始状态透明 */
-    transform: translateX(100%);
-    /* 初始位置在右侧（屏幕外） */
-    transform-origin: center center;
-    /* 添加以下属性 */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#live2d canvas {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    /* 重要：覆盖JavaScript的transform */
-    transform: none !important;
-}
-
-/* 应用动画的类 */
-#live2d.slide-in {
-    animation: slideInFromRight 0.6s ease-out;
-}
-
-#live2d.slide-out {
-    animation: slideOutToLeft 0.4s ease-in;
-}
-
-#live2d:active {
-    cursor: grabbing;
 }
 
 #live2d-tool {
@@ -160,7 +112,6 @@
 
 #live2d-tool svg:hover {
     color: #0684bd;
-    /* #34495e */
 }
 
 #live2d-chat-model {

@@ -345,20 +345,6 @@ function Live2d() {
         const modelUrl = model.path;
         console.log(`Loading model: ${modelUrl}`);
         
-        // 应用模型特定的缩放和位置设置
-        const canvas = document.getElementById("live2d");
-        if (canvas) {
-          const scale = model.scale || 1.0;
-          const x = model.x || 0;
-          const y = model.y || 0;
-          
-          canvas.style.transform = `scale(${scale}) translate(${x}px, ${y}px)`;
-          canvas.style.transformOrigin = 'center bottom';
-          canvas.setAttribute('data-model', modelId);
-          
-          console.log(`Applied transform: scale(${scale}) translate(${x}px, ${y}px)`);
-        }
-        
         loadlive2d(
           "live2d",
           modelUrl,
